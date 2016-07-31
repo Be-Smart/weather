@@ -17,11 +17,12 @@ WeatherInfo.prototype.renderInfo = function (respond) {
 WeatherInfo.prototype.toggleScale = function (event, celsius, fahrenheit) {
   var target = event.target;
   var value = this.tempEl.innerHTML;
-  if (target.className == fahrenheit.className) {
+  var hasNoClass = (' ' + target.className + ' ').indexOf(' active ') < 0;
+  if (target.className == fahrenheit.className && hasNoClass) {
     this.tempEl.innerHTML = Math.round(value * 1.8 + 32);
     fahrenheit.className += ' active';
     celsius.className = celsius.className.replace(/(?:^|\s)active(?!\S)/ , '');
-  } else if (target.className == celsius.className) {
+  } else if (target.className == celsius.className && hasNoClass) {
     this.tempEl.innerHTML = Math.round((value - 32) / 1.8);
     celsius.className += ' active';
     fahrenheit.className = fahrenheit.className.replace(/(?:^|\s)active(?!\S)/ , '');
