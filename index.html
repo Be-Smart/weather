@@ -6,11 +6,23 @@
 	<title>Weather</title>
 	<meta name="description" content="Weather for your region">
 	<meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1">
+	<link href='http://fonts.googleapis.com/css?family=Roboto:100,300,700,400' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="app/css/main.css">
 </head>
 <body>
 
-	<h1>Hi it's work!</h1>
+	<div class="wrap">
+		<h1 class="main__header">Weather App</h1>
+		<div class="icon">
+		</div>
+		<div class="weather">
+			<div class="weather__location"></div>
+			<div class="weather__temperature">
+				<span class="weather__number"></span><span class="weather__celsius active">&#x2103;</span> | <span class="weather__fahrenheit">&#x2109;</span>
+			</div>
+			<div class="weather__description">	</div>
+		</div><!-- end weather -->
+	</div> <!-- end wrap -->
 
 	<script src="app/js/main.min.js"></script>
 

@@ -8,27 +8,25 @@ body
 	height: 100%
 
 body
+	background: $brown
 	color: $brown
+	font-family: 'Roboto', sans-serif
+	font-weight: 300
 
 h1,h2,h3
-	color: $orange
+	color: $green
 
 h1
-	font-size: + em(32px)
-	margin-bottom: 50px
-
-h3
-	font-size: em(22px)
-	font-weight: lighter
-	margin-bottom: 10px
+	font-size: em(52px)
+	font-weight: 300
+	margin: 0
+	+breakpoint($md__brkpoint)
+		margin: 0 0 50px
 
 p
 	font-size: em(20px)
 	line-height: 1.5
-
-a
-	text-decoration: none
-	color: $black
+	color: $white
 
 img
 	max-width: 100%
