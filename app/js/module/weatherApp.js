@@ -16,7 +16,7 @@ var iconContainer = document.getElementsByClassName('icon')[0];
 var weatherInfo = new WeatherInfo(location, temperature, description);
 var weatherIcon = new WeatherIcon(iconContainer);
 
-//Link to AJAX request
+//Store link to AJAX request
 var link = 'http://api.openweathermap.org/data/2.5/weather?lat=51.24&lon=33.2&APPID=92febc9cb6d73da4dacef2636a9ecef7';
 
 //Bind event listeners
@@ -28,3 +28,9 @@ document.addEventListener('DOMContentLoaded', function() {
 tempContainer.addEventListener('click', function(e) {
   weatherInfo.toggleScale(e, celsius, fahrenheit);
 });
+
+//Update weather every 15 min
+setInterval(function() {
+  weatherInfo.getWeather(link, weatherInfo.renderInfo.bind(weatherInfo));
+  weatherIcon.getWeather(link, weatherIcon.renderImg.bind(weatherIcon));
+},900000);
